@@ -146,7 +146,12 @@
         $('#btnN').fadeOut();
         $('#inputs').slideDown();
         $('iframe.vl').animate({height: 0 + 'px', opacity: 0});
-        setTimeout(function () { $('#fr').focus(); $('#fr').select(); }, 1);
+        setTimeout(function () {
+            $('#fr').focus();
+            $('#fr').select();
+            $('#btnS').removeClass("ui-state-hover");
+            $('#btnS').removeClass("ui-state-active");
+        }, 1);
     }
     
     function populate(element, item) {
