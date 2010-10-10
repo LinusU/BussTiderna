@@ -24,7 +24,7 @@ $first = true;
 
 echo "[";
 
-while($row = $data->fetchArray()) {
+while($row = $data->fetchArray(SQLITE3_ASSOC)) {
     if($first) { $first = false; } else { echo ", "; }
     echo json_encode($row);
 }
@@ -35,7 +35,7 @@ if($first) {
         $db->escapeString($term)
     ));
     
-    while($row = $data->fetchArray()) {
+    while($row = $data->fetchArray(SQLITE3_ASSOC)) {
         if($first) { $first = false; } else { echo ", "; }
         echo json_encode($row);
     }
