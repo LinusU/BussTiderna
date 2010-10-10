@@ -4,6 +4,7 @@
 <head>
     <title>BussTiderna</title>
     
+    <link rel="shortcut icon" href="img,Icon.png" />
     <link rel="stylesheet" type="text/css" href="css" />
     <link rel="apple-touch-icon" href="img,Icon-Apple.png" />
     

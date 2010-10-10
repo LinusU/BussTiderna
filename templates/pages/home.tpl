@@ -178,6 +178,7 @@
         delay: 0,
         source: "search",
         selectFirst: true,
+        focus: function () { return false; },
         select: function (event, ui) {
             return !populate('fr', ui.item);
         }
@@ -187,6 +188,7 @@
         delay: 0,
         source: "search",
         selectFirst: true,
+        focus: function () { return false; },
         select: function (event, ui) {
             return !populate('to', ui.item);
         }
