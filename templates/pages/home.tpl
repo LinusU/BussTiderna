@@ -24,7 +24,7 @@
         
     </div>
     
-    <div id="timing" style="_display: none;">
+    <div id="timing" style="display: none;">
         
         <div class="half h280">
             <div id="date"></div>
@@ -52,16 +52,6 @@
                 <div id="M0D" style="margin-left: 16px;"></div>
                 <div id="M1D"></div>
             </div>
-            
-            <!--div class="slider">
-                Timmar:
-                <div id="sliderH"></div>
-            </div>
-            
-            <div class="slider">
-                Minuter:
-                <div id="sliderM"></div>
-            </div-->
             
         </div>
         
@@ -141,6 +131,7 @@
         var m = $('#clockM1').flipclock("value");
         $('#datetime').append(pad00(h) + ":");
         $('#datetime').append(pad00(m));
+        $('#Ihhmm').attr('value', pad00(h) + "" + pad00(m));
     }
     
     function loaded() {
@@ -221,68 +212,20 @@
     
     $('#clockM0').flipclock();
     $('#clockM1').flipclock({next: "#clockM0"});
-    /*
-    $('#sliderH').slider({
-        animate: "fast",
-        range: "min",
-        value: 3,
-        min: 0,
-        max: 23,
-        step: 1,
-        slide: function (event, ui) {
-            $('#clockH1').flipclock("flip", ui.value);
-            datetime();
-        },
-        change: function (event, ui) {
-            $('#clockH1').flipclock("flip", ui.value);
-            datetime();
-            if(ui.value < 10) {
-                $('#Ihhmm').attr("value", "0" + ui.value + $('#Ihhmm').attr("value").substring(2,4));
-            } else {
-                $('#Ihhmm').attr("value", ui.value + $('#Ihhmm').attr("value").substring(2,4));
-            }
-        }
-    });
     
-    $('#sliderM').slider({
-        animate: "fast",
-        range: "min",
-        value: 3,
-        min: 0,
-        max: 55,
-        step: 5,
-        slide: function (event, ui) {
-            $('#clockM1').flipclock("flip", ui.value);
-            datetime();
-        },
-        change: function (event, ui) {
-            $('#clockM1').flipclock("flip", ui.value);
-            datetime();
-            if(ui.value < 10) {
-                $('#Ihhmm').attr("value", $('#Ihhmm').attr("value").substring(0,2) + "0" + ui.value);
-            } else {
-                $('#Ihhmm').attr("value", $('#Ihhmm').attr("value").substring(0,2) + ui.value);
-            }
-        }
-    });
-    */
+    $('#H0U').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 10) % 24); datetime(); });
+    $('#H1U').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 1) % 24); datetime(); });
     
-    $('#H0U').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 10) % 24); });
-    $('#H1U').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 1) % 24); });
+    $('#M0U').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 10) % 60); datetime(); });
+    $('#M1U').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 5) % 60); datetime(); });
     
-    $('#M0U').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 10) % 60); });
-    $('#M1U').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 5) % 60); });
+    $('#H0D').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 14) % 24); datetime(); });
+    $('#H1D').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 23) % 24); datetime(); });
     
-    $('#H0D').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 14) % 24); });
-    $('#H1D').click(function () { $('#clockH1').flipclock("flip", ($('#clockH1').flipclock("value") + 23) % 24); });
-    
-    $('#M0D').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 50) % 60); });
-    $('#M1D').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 55) % 60); });
+    $('#M0D').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 50) % 60); datetime(); });
+    $('#M1D').click(function () { $('#clockM1').flipclock("flip", ($('#clockM1').flipclock("value") + 55) % 60); datetime(); });
     
     var d = new Date();
-    
-    $('#sliderH').slider("value", d.getHours());
-    $('#sliderM').slider("value", d.getMinutes());
     
     $('#clockH1').flipclock("flip", d.getHours());
     $('#clockM1').flipclock("flip", Math.floor(d.getMinutes() / 5.0) * 5);
@@ -311,6 +254,8 @@
         });
         
     }( jQuery ));
+    
+    datetime();
     
 </script>
 {/literal}
