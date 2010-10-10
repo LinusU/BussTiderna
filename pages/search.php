@@ -6,18 +6,13 @@ if(!isset($_REQUEST['term']) or strlen($_REQUEST['term']) == 0) {
     die(0);
 }
 
-$replace = array(
-    array('å', 'ä', 'ö', 'Å', 'Ä', 'Ö'),
-    array('&aring;', '&auml;', '&ouml', '&Aring;', '&Auml;', '&Ouml')
-);
-
 $db = new SQLite3(dirname(__FILE__) . '/../stops.sqlite');
 
 $term = $_REQUEST['term'];
 
 $data = $db->query(sprintf(
-    "SELECT * FROM `stops` WHERE `label` LIKE '%s%%'",
-    $db->escapeString($term)
+    "SELECT * FROM `stops` WHERE `label` LIKE '%s%%' OR `label` LIKE '%%/ %s%%' ORDER BY `priority` DESC",
+    $db->escapeString($term), $db->escapeString($term)
 ));
 
 $first = true;
@@ -31,7 +26,7 @@ while($row = $data->fetchArray(SQLITE3_ASSOC)) {
 
 if($first) {
     $data = $db->query(sprintf(
-        "SELECT * FROM `stops` WHERE `label` LIKE '%%%s%%'",
+        "SELECT * FROM `stops` WHERE `label` LIKE '%%%s%%' ORDER BY `priority` DESC",
         $db->escapeString($term)
     ));
     

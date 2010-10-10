@@ -14,7 +14,7 @@ iframe.vl {
 }
 
 #date {
-    margin-left: 20px;
+    margin-left: 32px;
 }
 
 #dialog img {
@@ -30,7 +30,14 @@ iframe.vl {
 }
 
 .h280 {
-    height: 280px;
+    height: 274px;
+    padding-bottom: 0px;
+}
+
+.h280p {
+    padding-top: 24px;
+    padding-bottom: 0px;
+    height: 250px;
 }
 
 .half input {
@@ -89,13 +96,6 @@ iframe.vl {
 .arrows.down div { background-position: 0px -72px; }
 .arrows.down div:active { background-position: 0px -48px; }
 
-.slider {
-    font-weight: bold;
-    line-height: 200%;
-    padding: 6px 0px;
-    overflow: visible;
-}
-
 #btnS {
     float: right;
     margin: 8px 24px;
@@ -108,7 +108,14 @@ iframe.vl {
     width: 500px;
 }
 
+#btnN {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 24px;
+}
+
 #datetime {
-    padding-left: 6px;
+    padding-left: 8px;
     opacity: 0.5;
 }

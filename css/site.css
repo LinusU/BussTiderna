@@ -28,10 +28,13 @@ h1 {
 
 .header {
     background-image: url(img,top.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     height: 165px;
 }
 
 .content {
+    position: relative;
     padding: 0px 20px;
     overflow: visible;
 }

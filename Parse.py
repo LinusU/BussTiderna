@@ -28,7 +28,7 @@ for line in stdin:
         c.execute("SELECT * FROM `stops` WHERE `value`=? AND `label`=?", (v.decode('utf-8'), l.decode('utf-8')))
         
         if c.fetchone() is None:
-            c.execute("INSERT INTO `stops` (`value`, `label`) VALUES(?, ?)", (v.decode('utf-8'), l.decode('utf-8')))
+            c.execute("INSERT INTO `stops` (`value`, `label`, `priority`) VALUES(?, ?, 0)", (v.decode('utf-8'), l.decode('utf-8')))
             rows += 1
         
     
