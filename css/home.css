@@ -1,0 +1,114 @@
+
+iframe.vl {
+    width: 760px;
+    border: none;
+    height: 0px;
+    opacity: 0;
+    margin: 0px auto;
+}
+
+#inputs {
+    position: relative;
+    overflow: visible;
+    padding: 12px 0px;
+}
+
+#date {
+    margin-left: 20px;
+}
+
+#dialog img {
+    float: left;
+    margin-right: 6px;
+}
+
+.half {
+    position: relative;
+    width: 50%;
+    float: left;
+    padding-bottom: 16px;
+}
+
+.h280 {
+    height: 280px;
+}
+
+.half input {
+    height: 20px;
+    line-height: 20px;
+    width: 336px;
+    padding: 2px 4px;
+    margin: 0px 16px;
+    border: 1px solid #a6c9e2;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.half input:focus,
+.half button:focus,
+.ui-button:focus,
+.ui-slider-handle:focus {
+    outline: none;
+    box-shadow: 0px 0px 16px #a6c9e2;
+    -moz-box-shadow: 0px 0px 16px #a6c9e2;
+    -webkit-box-shadow: 0px 0px 16px #a6c9e2;
+}
+
+.clocks {
+    overflow: auto;
+    width: 272px;
+    margin: 16px auto;
+    background-color: #d3d3d3;
+    background-image: url(img,clockBG.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+.arrows {
+    overflow: auto;
+    width: 272px;
+    height: 24px;
+    margin: 0px auto;
+}
+
+.arrows div {
+    width: 64px;
+    height: 24px;
+    float: left;
+    background-image: url(img,arrows.png);
+}
+
+.arrows.up div { background-position: 0px 0px; }
+.arrows.up div:active { background-position: 0px -24px; }
+
+.arrows.down div { background-position: 0px -72px; }
+.arrows.down div:active { background-position: 0px -48px; }
+
+.slider {
+    font-weight: bold;
+    line-height: 200%;
+    padding: 6px 0px;
+    overflow: visible;
+}
+
+#btnS {
+    float: right;
+    margin: 8px 24px;
+    width: 160px;
+}
+
+#btnT {
+    float: left;
+    margin: 8px 24px;
+    width: 500px;
+}
+
+#datetime {
+    padding-left: 6px;
+    opacity: 0.5;
+}
