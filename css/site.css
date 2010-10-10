@@ -38,3 +38,31 @@ h1 {
     padding: 0px 20px;
     overflow: visible;
 }
+
+@media (max-width: 800px) {
+    
+    body {
+        background-color: white;
+        background-image: none;
+    }
+    
+    .site {
+        width: auto;
+        min-width: 760px;
+        margin: 0px auto;
+        border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    
+    .content {
+        padding: 0px;
+        width: 760px;
+        margin: 0px auto;
+    }
+    
+    
+}
