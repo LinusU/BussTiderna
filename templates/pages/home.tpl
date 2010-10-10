@@ -146,7 +146,7 @@
         $('#btnN').fadeOut();
         $('#inputs').slideDown();
         $('iframe.vl').animate({height: 0 + 'px', opacity: 0});
-        setTimeout(function () { $('#fr').focus(); }, 1);
+        setTimeout(function () { $('#fr').focus(); $('#fr').select(); }, 1);
     }
     
     function populate(element, item) {
@@ -164,7 +164,7 @@
             }}
         );
         $('#I' + element).attr('value', html + "|" + item.value);
-        if(element == "fr") { setTimeout(function () { $('#to').focus(); }, 1); }
+        if(element == "fr") { setTimeout(function () { $('#to').focus(); $('#to').select(); }, 1); }
         if(element == "to") { setTimeout(function () { $('button').focus(); }, 1); }
         return true;
     }
