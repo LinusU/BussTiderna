@@ -21,7 +21,7 @@ for line in stdin:
         
         l, v = m.group(1, 2)
         
-        if v[:2] != "60": continue
+        #if v[:2] != "60": continue
         
         c = conn.cursor()
         
