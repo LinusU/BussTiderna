@@ -17,6 +17,10 @@
 
 <div id="slider"></div>
 
+<p></p>
+
+<button>Random!</button>
+
 {literal}
 <script type="text/javascript">
     
@@ -47,6 +51,19 @@
         change: function (event, ui) {
             $('#clockK').flipclock("flip", ui.value);
         }
+    });
+    
+    $('button').button();
+    
+    $('button').click(function () {
+        var d = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+        for(var c in d) {
+            $('#clock' + d[c]).data("flipclock").next = null;
+        }
+        setInterval(function () {
+            var c = $('#clock' + d[Math.floor(Math.random() * d.length)]);
+            c.flipclock("flip", (c.flipclock("value") + 1) % 10);
+        }, 13);
     });
     
 </script>
