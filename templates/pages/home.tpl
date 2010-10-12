@@ -68,11 +68,11 @@
     <input type="hidden" name="selPointFr" id="Ifr" />
     <input type="hidden" name="selPointTo" id="Ito" />
     
-    <input type="hidden" name="inpTime" value="1200" id="Ihhmm" />
+    <input type="hidden" name="inpTime" value="{$smarty.now|date_format:"%H%M"}" id="Ihhmm" />
     
-    <input type="hidden" name="selDay" value="9" id="Idd" />
-    <input type="hidden" name="selMonth" value="10" id="Imm" />
-    <input type="hidden" name="selYear" value="10" id="Iyy" />
+    <input type="hidden" name="selDay" value="{$smarty.now|date_format:"%d"}" id="Idd" />
+    <input type="hidden" name="selMonth" value="{$smarty.now|date_format:"%m"}" id="Imm" />
+    <input type="hidden" name="selYear" value="{$smarty.now|date_format:"%y"}" id="Iyy" />
     
     <input type="hidden" name="selDirection" value="0" />
     
