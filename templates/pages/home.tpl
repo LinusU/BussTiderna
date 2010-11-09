@@ -70,9 +70,9 @@
     
     <input type="hidden" name="inpTime" value="{$smarty.now|date_format:"%H%M"}" id="Ihhmm" />
     
-    <input type="hidden" name="selDay" value="{$smarty.now|date_format:"%d"}" id="Idd" />
-    <input type="hidden" name="selMonth" value="{$smarty.now|date_format:"%m"}" id="Imm" />
-    <input type="hidden" name="selYear" value="{$smarty.now|date_format:"%y"}" id="Iyy" />
+    <input type="hidden" name="selDay" value="{$smarty.now|date_format:"%d"|ltrim:"0"}" id="Idd" />
+    <input type="hidden" name="selMonth" value="{$smarty.now|date_format:"%m"|ltrim:"0"}" id="Imm" />
+    <input type="hidden" name="selYear" value="{$smarty.now|date_format:"%y"|ltrim:"0"}" id="Iyy" />
     
     <input type="hidden" name="selDirection" value="0" />
     
@@ -201,9 +201,9 @@
         onSelect: function (dateText, inst) {
             var p = dateText.split("|");
             if(p[2].length == 4) { p[2] = p[2].substring(2, 4); }
-            $('#Idd').attr('value', p[0]);
-            $('#Imm').attr('value', p[1]);
-            $('#Iyy').attr('value', p[2]);
+            $('#Idd').attr('value', "" + parseInt(p[0]));
+            $('#Imm').attr('value', "" + parseInt(p[1]));
+            $('#Iyy').attr('value', "" + parseInt(p[2]));
             datetime();
         }
     });
