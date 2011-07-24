@@ -7,9 +7,9 @@ CACHE MANIFEST
 
 <?php
 if($_SERVER['REMOTE_ADDR'] == "127.0.0.1") {
-    echo '# TIME ' . time();
+    echo '# TIME ' . time() . PHP_EOL;
 } else {
-    echo '# REV ' . shell_exec('svnversion ' . escapeshellarg(dirname(__FILE__) . '/../'));
+    echo '# COMMIT ' . shell_exec('git rev-parse HEAD');
 }
 ?>
 
