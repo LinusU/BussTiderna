@@ -14,6 +14,9 @@ $site->plugins_dir[] = dirname(__FILE__) . '/../plugins/';
 $site->header_tpl = 'header.tpl';
 $site->footer_tpl = 'footer.tpl';
 
+/* What is the user requesting */
+$uri = $_SERVER['REQUEST_URI'];
+
 /* Fix for jQueryUI */
 if(substr($uri, 0, 8) == "/images/") {
     $uri = "img," . substr($uri, 8);
