@@ -7,13 +7,13 @@ iframe.vl {
     margin: 0px auto;
 }
 
-#inputs {
+.site #inputs {
     position: relative;
     overflow: visible;
     padding: 12px 0px;
 }
 
-#date {
+.site #date {
     margin-left: 32px;
 }
 
@@ -40,10 +40,9 @@ iframe.vl {
     height: 250px;
 }
 
-.half input {
+input {
     height: 20px;
     line-height: 20px;
-    width: 336px;
     padding: 2px 4px;
     margin: 0px 16px;
     border: 1px solid #a6c9e2;
@@ -52,8 +51,12 @@ iframe.vl {
     -webkit-border-radius: 4px;
 }
 
-.half input:focus,
-.half button:focus,
+.half input {
+    width: 336px;
+}
+
+input:focus,
+button:focus,
 .ui-button:focus,
 .ui-slider-handle:focus {
     outline: none;
@@ -96,23 +99,23 @@ iframe.vl {
 .arrows.down div { background-position: 0px -72px; }
 .arrows.down div:active { background-position: 0px -48px; }
 
-#btnS {
+.site #btnS {
     float: right;
     margin: 8px 24px;
     width: 160px;
 }
 
-#btnT {
+.site #btnT {
     float: left;
     margin: 8px 24px;
     width: 500px;
 }
 
-#btnN {
+.site #btnN {
     display: none;
     position: absolute;
     top: 0px;
-    left: 24px;
+    left: 24px;
 }
 
 #datetime {

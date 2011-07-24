@@ -5,6 +5,10 @@ header('Content-Type: text/cache-manifest; charset=utf-8');
 ?>
 CACHE MANIFEST
 
+<?php
+echo '# REV ' . shell_exec('svnversion ' . escapeshellarg(dirname(__FILE__) . '/../'));
+?>
+
 /js
 /css
 
