@@ -64,25 +64,92 @@
 
 <button id="btnN" style="display: none;" onclick="revert();">Ny sökning</button>
 
-<div class="mobile-vl">
-    <iframe name="vl" class="vl" onload="if(window.loaded) loaded();"></iframe>
+<div id="from-to">
+    <div style="float: left;"></div>
+    <div style="float: right;"></div>
 </div>
+
+<div id="result">
+    <table>
+        <tr><th>Avgång</th><th>Ankomst</th><th>Linje</th></tr>
+    </table>
+</di>
+
+<div id="trash"></div>
 
 {include file="snippets/script.tpl"}
 
-{literal}
 <script type="text/javascript">
     
     $(window).resize(function () {
-        $('#fr, #to, #btnS, #btnT, #btnN').each(function () {
+        $('#fr, #to, #btnS, #btnT, #btnN, #result, #from-to').each(function () {
             $(this).width($(window).width() - ($(this).outerWidth(true) - $(this).width()));
         });
     });
     
     $(window).resize();
     
+    function search() {
+        setTimeout(function () {
+            
+            $('#from-to div').eq(0).text($('#fr').val());
+            $('#from-to div').eq(1).text($('#to').val());
+            
+            $('#inputs').slideUp();
+            $('iframe.vl').animate({ height: 600 });
+            $('#dialog').dialog("open");
+            
+            $.ajax({
+                url: $('#vl').attr('action'),
+                data: $('#vl').serialize(),
+                type: $('#vl').attr('method'),
+                success: function (data) {
+                    
+                    var result = [];
+                    
+                    $('#trash').append(data);
+                    $('#trash').find('#row01').closest('table').find('tr').first().siblings('tr').slice(1, 5).each(function () {
+                        
+                        var tds = $(this).children('td');
+                        var lines = [];
+                        
+                        tds.eq(7).find('td').filter(':odd').each(function () {
+                            lines.push($.trim($(this).text()));
+                        });
+                        
+                        result.push({
+                            'date':     $.trim(tds.eq(2).text()),
+                            'depature': $.trim(tds.eq(3).text()),
+                            'arrival':  $.trim(tds.eq(4).text()),
+                            'duration': $.trim(tds.eq(5).text()),
+                            'switches': $.trim(tds.eq(6).text()),
+                            'lines':    lines
+                        });
+                        
+                    });
+                    
+                    for(var i in result) {
+                        $('#result table').append(
+                            '<tr>' +
+                            '<td>' + result[i].depature + '</td>' +
+                            '<td>' + result[i].arrival + '</td>' +
+                            '<td>' + result[i].lines.join(', ') + '</td>' +
+                            '</tr>'
+                        );
+                    }
+                    
+                    $('#trash').text('');
+                    $('#result, #from-to').slideDown();
+                    
+                    loaded();
+                    
+                }
+            });
+            
+        }, 1);
+    }
+    
 </script>
-{/literal}
 
 </body>
 </html>

@@ -6,18 +6,7 @@
     
     function pad00(n) { return (n<10?"0"+n:n); }
     
-    function search() {
-        setTimeout(function () {
-            $('#vl').submit();
-            $('#inputs').slideUp();
-            $('iframe.vl').animate({height: 600 + 'px'});
-            $('#dialog').dialog("open");
-        }, 1);
-    }
-    
-    function timing() {
-        $('#timing').slideToggle();
-    }
+    function timing() { $('#timing').slideToggle(); }
     
     function datetime() {
         var d = $('#date').datepicker("getDate");
@@ -43,6 +32,9 @@
     function revert() {
         $('#btnN').fadeOut();
         $('#inputs').slideDown();
+        $('#result, #from-to').slideUp(function () {
+            $('#result tr').slice(1).remove();
+        });
         $('iframe.vl').animate({height: 0 + 'px', opacity: 0});
         setTimeout(function () {
             $('#fr').focus();
@@ -66,7 +58,7 @@
                 default: return c;
             }}
         );
-        $('#I' + element).attr('value', html + "|" + item.value);
+        $('#I' + element).attr('value', html + "|" + item.value + "|1");
         if(element == "fr") { setTimeout(function () { $('#to').focus(); $('#to').select(); }, 1); }
         if(element == "to") { setTimeout(function () { $('button').focus(); }, 1); }
         return true;

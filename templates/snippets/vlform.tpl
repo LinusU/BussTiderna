@@ -1,5 +1,5 @@
 
-<form action="http://193.45.213.123/ltt/web2elmer/resultspage.asp" method="post" target="vl" id="vl">
+<form action="/gateway/resultspage.asp" method="post" target="vl" id="vl">
     
     <input type="hidden" name="selPointFr" id="Ifr" />
     <input type="hidden" name="selPointTo" id="Ito" />

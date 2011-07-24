@@ -61,4 +61,17 @@
 
 <iframe name="vl" class="vl" onload="if(window.loaded) loaded();"></iframe>
 
+<script type="text/javascript">
+    
+    function search() {
+        setTimeout(function () {
+            $('#vl').submit();
+            $('#inputs').slideUp();
+            $('iframe.vl').animate({ height: 600 });
+            $('#dialog').dialog("open");
+        }, 1);
+    }
+    
+</script>
+
 {include file="snippets/script.tpl"}
