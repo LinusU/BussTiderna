@@ -1,17 +1,10 @@
 <?php
 
 function search($db, $term, $strict = true) {
-    /*
-    if($strict and in_array($term[0], array('å', 'ä', 'ö'))) {
-        $term[0] = strtoupper($term[0]);
-    } else {
-        $term = str_replace(array('å', 'ä', 'ö', 'Å', 'Ä', 'Ö'), "_", $term);
-    }
-    */
     if($strict) {
         return $db->query(sprintf(
-            "SELECT * FROM `stops` WHERE `label` LIKE '%s%%' OR `label` LIKE '%%/ %s%%' OR `label` LIKE '%%/%s%%' ORDER BY `priority` DESC LIMIT 12",
-            $db->escapeString($term), $db->escapeString($term), $db->escapeString($term)
+            "SELECT * FROM `stops` WHERE `label` LIKE '%s%%' OR `label` LIKE '%%/ %s%%' OR `label` LIKE '%%/%s%%' OR `label` LIKE '%%(%s%%' ORDER BY `priority` DESC LIMIT 12",
+            $db->escapeString($term), $db->escapeString($term), $db->escapeString($term), $db->escapeString($term)
         ));
     } else {
         $data = $db->query(sprintf(
@@ -19,7 +12,6 @@ function search($db, $term, $strict = true) {
             $db->escapeString($term)
         ));
     }
-    
 }
 
 function sqprint($data, $first = true) {
