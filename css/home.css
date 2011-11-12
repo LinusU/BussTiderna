@@ -47,8 +47,6 @@ input {
     margin: 0px 16px;
     border: 1px solid #a6c9e2;
     border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
 }
 
 .half input {
@@ -61,8 +59,6 @@ button:focus,
 .ui-slider-handle:focus {
     outline: none;
     box-shadow: 0px 0px 16px #a6c9e2;
-    -moz-box-shadow: 0px 0px 16px #a6c9e2;
-    -webkit-box-shadow: 0px 0px 16px #a6c9e2;
 }
 
 .clocks {
@@ -70,13 +66,11 @@ button:focus,
     width: 272px;
     margin: 16px auto;
     background-color: #d3d3d3;
-    background-image: url(img,clockBG.png);
+    background-image: url(img/clockBG.png);
     background-repeat: no-repeat;
     background-position: center center;
     padding: 10px 12px;
     border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
 }
 
 .arrows {
@@ -90,7 +84,7 @@ button:focus,
     width: 64px;
     height: 24px;
     float: left;
-    background-image: url(img,arrows.png);
+    background-image: url(img/arrows.png);
 }
 
 .arrows.up div { background-position: 0px 0px; }

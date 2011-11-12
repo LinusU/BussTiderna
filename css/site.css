@@ -20,15 +20,11 @@ h4, h5, h6 {
     padding-bottom: 16px;
     margin: 0px auto 16px;
     border-radius: 0px 0px 16px 16px;
-    -moz-border-radius: 0px 0px 16px 16px;
-    -webkit-border-radius: 0px 0px 16px 16px;
     box-shadow: 0px 0px 16px black;
-    -moz-box-shadow: 0px 0px 16px black;
-    -webkit-box-shadow: 0px 0px 16px black;
 }
 
 .header {
-    background-image: url(img,top.png);
+    background-image: url(img/top.png);
     background-repeat: no-repeat;
     background-position: center top;
     height: 165px;
@@ -43,7 +39,7 @@ h4, h5, h6 {
 #trash, #result {
     display: none;
 }
-
+/*
 @media (max-width: 800px) {
     
     body {
@@ -56,11 +52,7 @@ h4, h5, h6 {
         min-width: 760px;
         margin: 0px auto;
         border-radius: 0px;
-        -moz-border-radius: 0px;
-        -webkit-border-radius: 0px;
         box-shadow: none;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
     }
     
     .content {
@@ -71,3 +63,4 @@ h4, h5, h6 {
     
     
 }
+*/

@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: text/javascript; charset=utf-8');
+$smarty->contentType('text', 'javascript');
 
 $dir = dirname(__FILE__) . '/../js';
 

@@ -2,7 +2,7 @@
 <div id="dialog" style="display: none;">
     
     <p>
-        <img src="img,ajax-loader.gif" alt="" />
+        <img src="{"img/ajax-loader.gif"|cdn}" alt="" />
         Vänligen vänta, sökning pågår.
     </p>
     

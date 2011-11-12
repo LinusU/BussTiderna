@@ -1,5 +1,5 @@
 <?php
 
-$smarty->_onlycontent();
+$smarty->onlyContent();
 
 $smarty->display();

@@ -3,10 +3,10 @@ window.clockImages = [[], []];
 
 for(var i=0; i<10; i++) {
     var img = new Image();
-    img.src = "img,clockU" + i + ".png";
+    img.src = cdn("img/clockU" + i + ".png");
     window.clockImages[0].push(img);
     img = new Image();
-    img.src = "img,clockD" + i + ".png";
+    img.src = cdn("img/clockD" + i + ".png");
     window.clockImages[1].push(img);
 }
 
@@ -106,8 +106,8 @@ for(var i=0; i<10; i++) {
                 
                 var done = function () {
                     
-                    divs.first().css({"background-image": 'url(img,clockU' + n + '.png)'});
-                    divs.last().css({"background-image": 'url(img,clockD' + n + '.png)'});
+                    divs.first().css({"background-image": 'url(' + cdn('img/clockU' + n + '.png') + ')'});
+                    divs.last().css({"background-image": 'url(' + cdn('img/clockD' + n + '.png') + ')'});
                     
                     imgs.css({visibility: 'hidden'});
                     
@@ -155,14 +155,14 @@ for(var i=0; i<10; i++) {
                 
                 if(n > data.current || (n < 3 && data.current > 6)) {
                     
-                    divs.first().css({"background-image": 'url(img,clockU' + n + '.png)'});
+                    divs.first().css({"background-image": 'url(' + cdn('img/clockU' + n + '.png') + ')'});
                     
-                    imgs.first().attr('src', 'img,clockU' + data.current + '.png');
+                    imgs.first().attr('src', cdn('img/clockU' + data.current + '.png'));
                     imgs.first().css({visibility: 'visible', top: '0px', height: '49px'});
                     
                     imgs.first().animate({height: '0px', top: '48px'}, data.halftime, 'easeInCubic', function () {
                         
-                        imgs.last().attr('src', 'img,clockD' + n + '.png');
+                        imgs.last().attr('src', cdn('img/clockD' + n + '.png'));
                         imgs.last().css({visibility: 'visible', height: '0px'});
                         imgs.last().animate({height: '48px'}, data.halftime, 'easeOutCubic', done);
                         
@@ -170,13 +170,13 @@ for(var i=0; i<10; i++) {
                     
                 } else {
                     
-                    divs.last().css({"background-image": 'url(img,clockD' + n + '.png)'});
-                    imgs.last().attr('src', 'img,clockD' + data.current + '.png');
+                    divs.last().css({"background-image": 'url(' + cdn('img/clockD' + n + '.png') + ')'});
+                    imgs.last().attr('src', cdn('img/clockD' + data.current + '.png'));
                     imgs.last().css({visibility: 'visible', height: '48px'});
                     
                     imgs.last().animate({height: '0px'}, data.halftime, 'easeInCubic', function () {
                         
-                        imgs.first().attr('src', 'img,clockU' + n + '.png');
+                        imgs.first().attr('src', cdn('img/clockU' + n + '.png'));
                         imgs.first().css({visibility: 'visible', top: '48px', height: '0px'});
                         imgs.first().animate({top: '0px', height: '48px'}, data.halftime, 'easeOutCubic', done);
                         

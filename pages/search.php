@@ -37,7 +37,7 @@ function sqprint($data, $first = true) {
     return sqprint($data, false);
 }
 
-header('Content-Type: text/json; charset=utf-8');
+$smarty->contentType('text', 'json');
 
 if(!isset($_REQUEST['term']) or strlen($_REQUEST['term']) == 0) {
     die(0);
