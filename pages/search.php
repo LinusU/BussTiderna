@@ -10,7 +10,7 @@ function search($db, $term, $strict = true) {
     */
     if($strict) {
         return $db->query(sprintf(
-            "SELECT * FROM `stops` WHERE `label` LIKE '%s%%' OR `label` LIKE '%%/ %s%%' ORDER BY `priority` DESC LIMIT 12",
+            "SELECT * FROM `stops` WHERE `label` LIKE '%s%%' OR `label` LIKE '%%/ %s%%' OR `label` LIKE '%%/%s%%' ORDER BY `priority` DESC LIMIT 12",
             $db->escapeString($term), $db->escapeString($term)
         ));
     } else {
